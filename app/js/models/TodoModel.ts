@@ -14,7 +14,7 @@ export default class TodoModel {
         this.name = name;
     }
 
-    setDone = () => {
+    @action setDone = () => {
         this.doneDate = new Date();
     }
 

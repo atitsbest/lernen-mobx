@@ -2,7 +2,7 @@ import * as React from 'react';
 import {observable} from 'mobx';
 import {inject, observer} from 'mobx-react';
 
-import TodoStore from '../stores/TodoStore';
+import { TodoStore } from '../stores/TodoStore';
 import { STORE_TODO } from '../const/stores';
 import { TodoList } from './TodoList';
 

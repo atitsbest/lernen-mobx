@@ -1,12 +1,12 @@
 import * as React from "react";
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { TodoListItem } from "./TodoListItem";
 import TodoModel from '../models/TodoModel';
 
 
 QUnit.test('<TodoListItem> renders name', assert => {
     const model = new TodoModel('NAME');
-    const app = mount(<TodoListItem model={model} />);
+    const app = shallow(<TodoListItem model={model} />);
 
     const li = app.find('.todo-list-item');
     const name = li.find('.name').text();
@@ -18,7 +18,7 @@ QUnit.test('<TodoListItem> renders name', assert => {
 QUnit.test('<TodoListItem> renders completed with doneDate', assert => {
     const model = new TodoModel('NAME');
     model.setDone();
-    const app = mount(<TodoListItem model={model} />);
+    const app = shallow(<TodoListItem model={model} />);
 
     const li = app.find('.todo-list-item');
     const checkbox = li.find({type: 'checkbox'});
