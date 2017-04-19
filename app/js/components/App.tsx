@@ -32,11 +32,10 @@ export default class App extends React.Component<AppProps, {}> {
 
         return(
             <div>
-                <h1>It work's as an app {this.filter}</h1>
                 <AddTodoInput placeholder="Neuer Eintrag..." onCreate={store.addTodo} />
-                <h2>Open</h2>
+                <h2>Aufgaben</h2>
                 <TodoList todos={store.openTodos} onDelete={store.deleteTodo} />
-                <h2>Completed</h2>
+                <h4>Erledigt</h4>
                 <TodoList todos={store.completedTodos} />
             </div>
         );

@@ -86705,13 +86705,10 @@ var App = (function (_super) {
     App.prototype.render = function () {
         var store = this.props[stores_1.STORE_TODO];
         return (React.createElement("div", null,
-            React.createElement("h1", null,
-                "It work's as an app ",
-                this.filter),
             React.createElement(AddTodoInput_1.AddTodoInput, { placeholder: "Neuer Eintrag...", onCreate: store.addTodo }),
-            React.createElement("h2", null, "Open"),
+            React.createElement("h2", null, "Aufgaben"),
             React.createElement(TodoList_1.TodoList, { todos: store.openTodos, onDelete: store.deleteTodo }),
-            React.createElement("h2", null, "Completed"),
+            React.createElement("h4", null, "Erledigt"),
             React.createElement(TodoList_1.TodoList, { todos: store.completedTodos })));
     };
     return App;
@@ -86813,8 +86810,8 @@ var App_1 = __webpack_require__(601);
 var TodoStore_1 = __webpack_require__(602);
 QUnit.test('<App> renders correctly', function (assert) {
     var app = enzyme_1.mount(React.createElement(App_1.default, { todos: new TodoStore_1.TodoStore() }));
-    assert.equal(app.find('h1').text(), "It work's as an app ");
-    assert.equal(app.find('.todo-list-item').length, 4);
+    assert.equal(app.find('h2').text(), "Aufgaben");
+    assert.equal(app.find('h4').text(), "Erledigt");
 });
 // QUnit.test('<App> renders correctly (only completed))', assert => {
 //     const app = mount(<App todos={new TodoStore()} />);
