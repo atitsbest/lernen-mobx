@@ -1,14 +1,28 @@
 {
   "scripts": {
-    "build": "node_modules/.bin/webpack -p",
-    "serve": "node_modules/.bin/webpack-dev-server --hot"
+    "build": "webpack -p",
+    "watch": "webpack -w",
+    "watch:test": "webpack --config webpack.tests.config.js -w",
+    "serve": "webpack-dev-server --hot",
+    "test": "karma start"
   },
   "devDependencies": {
+    "@types/enzyme": "^2.7.8",
+    "@types/qunit": "^2.0.31",
+    "enzyme": "^2.8.2",
+    "glob": "^7.1.1",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-qunit": "1.2.1",
+    "qunitjs": "^2.3.2",
+    "react-addons-test-utils": "15.5.1",
     "source-map-loader": "0.2.1",
     "ts-loader": "2.0.3",
     "typescript": "2.2.2",
     "webpack": "2.4.1",
-    "webpack-dev-server": "2.4.2"
+    "webpack-dev-server": "2.4.2",
+    "lodash": "4.17.4"
   },
   "dependencies": {
     "@types/react": "^15.0.21",
