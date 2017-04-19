@@ -7,6 +7,8 @@ import { TodoStore } from './stores/TodoStore';
 
 import App from './components/App'; 
 
+import 'normalize-css';
+
 useStrict(true);
 
 const stores = {
