@@ -5,16 +5,18 @@ import {observer} from 'mobx-react';
 import { TodoListItem } from './TodoListItem';
 import TodoModel from '../models/TodoModel';
 
-@observer
-export default class TodoList extends React.Component<undefined, undefined> {
-    @observable todos: any[] = [new TodoModel('Das'), new TodoModel('ist')];
+export interface TodoListProps {
+    todos: Array<TodoModel>
+}
 
+@observer
+export class TodoList extends React.Component<TodoListProps, undefined> {
     constructor() {
         super();
     }
 
     render() {
-        let task_list_items = this.todos.map(m => <TodoListItem model={m}></TodoListItem>);
+        let task_list_items = this.props.todos.map(m => <TodoListItem model={m}></TodoListItem>);
 
         return(
             <div>

@@ -1,4 +1,6 @@
-import { observable, action } from 'mobx';
+import { observable, action, useStrict } from 'mobx';
+
+useStrict(true);
 
 let _id = 0;
 
@@ -12,7 +14,7 @@ export default class TodoModel {
         this.name = name;
     }
 
-    @action setDone = () => {
+    setDone = () => {
         this.doneDate = new Date();
     }
 

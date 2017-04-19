@@ -14,13 +14,13 @@ export class TodoListItem extends React.Component<TodoListItemProps, {}> {
         return(
             <li className="todo-list-item">
                 <input type="checkbox" checked={this.props.model.doneDate !== null} 
-                       onChange={e => this.updateDoneState(e)} />
+                       onChange={this.handleDoneChange} />
                 <strong className="name">{this.props.model.name}</strong>            
             </li>
         )
     }
 
-    updateDoneState = (e:any) => {
+    handleDoneChange = (e: any) => {
         if (e.target.checked) {
             this.props.model.setDone();
         }
